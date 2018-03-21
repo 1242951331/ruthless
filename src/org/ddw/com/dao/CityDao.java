@@ -13,18 +13,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
+////// hello
 public class CityDao {
-		
+
 	@Resource
 	private SessionFactory sf;
-	
+
 	public List<City> selectAll() {
 		Session session = sf.getCurrentSession();
 		String sql = "select * from city";
 		SQLQuery query = session.createSQLQuery(sql).addEntity(City.class);
 		List list = query.list();
 		return list;
-		
+
 	}
-	
+
 }
